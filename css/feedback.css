@@ -1,0 +1,83 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.feedback-card {
+    background: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.feedback-card h2 {
+    text-align: center;
+    color: #1e2a55;
+    margin-bottom: 10px;
+}
+
+.feedback-card p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.feedback-card label {
+    font-weight: 500;
+    margin-top: 15px;
+    display: block;
+}
+
+.feedback-card input,
+.feedback-card textarea,
+.feedback-card select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.feedback-card textarea {
+    resize: none;
+}
+
+.feedback-card button {
+    margin-top: 25px;
+    width: 100%;
+    background: #2d5cff;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.feedback-card button:hover {
+    background: #1f45d8;
+}
+
+/* Messages */
+.success-msg {
+    background: #e6fff1;
+    color: #1a7f4b;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.error-msg {
+    background: #ffe6e6;
+    color: #b30000;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}

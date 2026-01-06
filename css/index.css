@@ -1,0 +1,225 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.35s ease;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #333;
+    background: #ffffff;
+}
+
+/* HERO */
+.hero {
+    background:
+        linear-gradient(rgba(31,43,85,0.6), rgba(11,94,215,0.6)),
+        url("https://scontent.fkep4-1.fna.fbcdn.net/v/t39.30808-6/477779327_122195776664156046_317033542286869422_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGC-1X8SQgruQ56LQJ6jTfCYPJXqfKqKS9g8lep8qopL2Z-iq9JBGRD_TgzkJmi4gRsY4mqT-q7gUsPDEvuzc4E&_nc_ohc=XRoieSOPFxEQ7kNvwGYZqwZ&_nc_oc=AdkhLWyK0M-waeSwfKf48jphf-dvEvhK7N8lDlA9WsX09DitIIkiyiyqQrUcE8WUEHo00HVmRgl_m_OPblMKJ6UA&_nc_zt=23&_nc_ht=scontent.fkep4-1.fna&_nc_gid=KGzrpmZrcYtzAHitkFOVUA&oh=00_Afpr9WU3Za9WMbApRKZ_0OqvOeVYbyr10zbxAAUCeYKCcw&oe=696282D9")
+        no-repeat center/cover;
+    color: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: auto;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-weight: 600;
+    font-size: 20px;
+    padding: 14px 18px;
+    line-height: 1.7;
+    color: #e6e9f2;
+}
+
+/* MODULES */
+.modules {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.module-card {
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e6e9f2;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.module-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    border: 2px solid transparent;
+    background: linear-gradient(120deg, #0b5ed7, #4facfe) border-box;
+    -webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+}
+
+.module-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(31,43,85,0.12);
+}
+
+.module-card:hover::before {
+    opacity: 1;
+}
+
+.module-card h3 {
+    margin-bottom: 12px;
+    color: #1f2b55;
+}
+
+/* VALUE */
+.value-section {
+    background: #f5f7fb;
+    padding: 70px 20px;
+}
+
+.value-section {
+    display: grid;
+    max-width: 1200px;
+    margin: auto;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.value-box {
+    background: #fff;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid #e6e9f2;
+}
+
+.value-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(31,43,85,0.12);
+}
+
+/* ACADEMIC LIFE */
+.academic-life {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.academic-life h2 {
+    margin-bottom: 35px;
+    color: #1f2b55;
+}
+
+.academic-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.academic-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.academic-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+/* FUTURE */
+.future-scope {
+    max-width: 900px;
+    margin: 70px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.future-scope h3 {
+    margin-bottom: 18px;
+    color: #1f2b55;
+}
+
+.future-scope ul {
+    list-style: none;
+    padding: 0;
+}
+
+.future-scope li {
+    padding: 10px 0;
+    color: #444;
+}
+
+.future-scope li:hover {
+    color: #0b5ed7;
+    transform: translateX(6px);
+}
+/* TYPING EFFECT (SAFE) */
+.typing {
+    display: inline-block;
+    min-height: 1.2em;
+    font-weight: 700;
+    position: relative;
+}
+
+.typing::after {
+    content: "|";
+    position: absolute;
+    right: -6px;
+    color: #ffffff;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+}
