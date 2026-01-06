@@ -27,7 +27,3 @@ function submitRegister() {
     return false; // Prevent actual form submission for demo
 }
 
-// Function to close the popup
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
-}
