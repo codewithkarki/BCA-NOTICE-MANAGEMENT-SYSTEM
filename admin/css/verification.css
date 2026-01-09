@@ -1,0 +1,237 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f6f8;
+}
+
+/* HEADER */
+.admin-header {
+    background: #0b3c5d;
+    color: #fff;
+    padding: 25px;
+}
+
+.admin-header h2 {
+    margin: 0;
+}
+
+.admin-header p {
+    opacity: 0.9;
+}
+
+/* WRAPPER */
+.verification-wrapper {
+    padding: 30px;
+}
+
+/* TABLE CARD */
+.table-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #0b3c5d;
+    color: #fff;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #f0f7fb;
+}
+
+/* BADGES */
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.pending {
+    background: #f0ad4e;
+    color: #fff;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.view {
+    background: #5bc0de;
+    color: #fff;
+}
+
+.approve {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.reject {
+    background: #d9534f;
+    color: #fff;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.detail-grid p {
+    margin: 8px 0;
+}
+
+.modal-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+/* ===============================
+   RESPONSIVE – ALL DEVICES
+================================ */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+    .verification-wrapper {
+        padding: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 13px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .admin-header {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .verification-wrapper {
+        padding: 15px;
+    }
+
+    table {
+        min-width: 700px; /* enables smooth horizontal scroll */
+    }
+
+    .btn {
+        font-size: 11px;
+        padding: 6px 8px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 576px) {
+    .admin-header h2 {
+        font-size: 20px;
+    }
+
+    .admin-header p {
+        font-size: 13px;
+    }
+
+    .verification-wrapper {
+        padding: 12px;
+    }
+
+    /* Card-like table scroll */
+    .table-card {
+        overflow-x: auto;
+        border-radius: 8px;
+    }
+
+    table {
+        min-width: 600px;
+    }
+
+    th, td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .btn {
+        font-size: 11px;
+        padding: 5px 7px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 18px;
+    }
+
+    .detail-grid p {
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 400px) {
+    .admin-header h2 {
+        font-size: 18px;
+    }
+
+    th, td {
+        font-size: 11px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 4px 6px;
+    }
+}

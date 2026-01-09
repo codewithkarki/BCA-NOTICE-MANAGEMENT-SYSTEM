@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/complain.css">
     <link rel="stylesheet" href="css/feedback.css">
-    <link rel="stylesheet" href="css/auth.css">
     <link rel="stylesheet" href="css\contact.css">
     <link rel="stylesheet" href="css\index.css">
     <link rel="stylesheet" href="css\notices.css">

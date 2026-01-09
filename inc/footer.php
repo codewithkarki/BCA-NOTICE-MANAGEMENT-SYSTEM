@@ -47,7 +47,6 @@
 <!-- JS FILES -->
 <script src="script\footer.js"></script>
 <script src="script/complain.js"></script>
-<script src="script/auth.js"></script>
 <script src="script/contact.js"></script>
 <script src="script/index.js"></script>
 <script src="script/notices.js"></script>

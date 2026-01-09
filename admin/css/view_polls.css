@@ -1,0 +1,68 @@
+.poll-view {
+    padding: 40px 20px;
+    background: #f4f7fb;
+    min-height: 80vh;
+}
+
+.poll-table-wrapper {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.poll-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.poll-table th,
+.poll-table td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+.poll-table th {
+    background: #0e3a5d;
+    color: #ffffff;
+}
+
+.status.active {
+    background: #20c997;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status.closed {
+    background: #adb5bd;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.view-btn {
+    background: #0e3a5d;
+    color: #ffffff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 25px;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+}

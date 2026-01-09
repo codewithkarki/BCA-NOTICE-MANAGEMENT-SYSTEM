@@ -1,0 +1,229 @@
+:root {
+    --primary: #0b3c5d;
+    --accent: #1abc9c;
+    --light: #ffffff;
+    --dark: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-area img {
+    height: 40px;
+}
+
+.logo-area span {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.logo-area:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+/* Underline hover animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    left: 0;
+    bottom: -4px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.logout-btn {
+    background: var(--accent);
+    padding: 6px 14px;
+    border-radius: 3px;
+    color: #003d36 !important;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #17a589;
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ===== POLL DROPDOWN (FINAL FIXED VERSION) ===== */
+
+.nav-dropdown {
+    position: relative;
+    z-index: 2000;
+}
+
+/* Toggle button */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 0;
+    font-family: inherit;
+}
+
+/* Arrow */
+.dropdown-toggle i {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px); /* VISUAL SPACING WITHOUT HOVER GAP */
+    left: 0;
+
+    background: #ffffff;
+    min-width: 190px;
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+    display: block;
+    padding: 12px 18px;
+    color: #0b3c5d;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: #f1f4f9;
+}
+
+/* KEEP DROPDOWN OPEN */
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Arrow rotate */
+.nav-dropdown:hover .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+/* OPTIONAL: INVISIBLE HOVER BUFFER (EXTRA SMOOTH) */
+.nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+}
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 900px) {
+    .dropdown-menu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding-left: 10px;
+    }
+
+    .dropdown-menu a {
+        color: var(--light);
+        padding: 8px 0;
+    }
+
+    .dropdown-menu a:hover {
+        background: none;
+        color: var(--accent);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--primary);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}

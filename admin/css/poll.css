@@ -1,0 +1,140 @@
+/* ===== POLL CREATE SECTION ===== */
+.poll-create {
+    padding: 60px 20px;
+    background: #f4f7fb;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poll-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.poll-header h2 {
+    font-size: 28px;
+    color: #0e3a5d;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.poll-header p {
+    color: #555;
+    font-size: 16px;
+}
+
+/* ===== FORM STYLING ===== */
+.poll-form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 650px;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poll-form:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #0e3a5d;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0e3a5d;
+    box-shadow: 0 0 6px rgba(14, 58, 93, 0.2);
+    outline: none;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ===== OPTIONS BUTTON ===== */
+#optionsContainer input {
+    margin-bottom: 10px;
+}
+
+.add-option-btn {
+    background: #0e3a5d;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: flex-start;
+    transition: background 0.3s;
+}
+
+.add-option-btn:hover {
+    background: #164c7d;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.submit-btn {
+    margin-top: 10px;
+    background: #20c997;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background: #1aa97b;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .poll-form {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .poll-header h2 {
+        font-size: 24px;
+    }
+
+    .poll-header p {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+/* ADMIN LOGIN */
+.admin-login-section {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f7fb;
+    padding: 40px 15px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #0e3a5d;
+    color: #ffffff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 14px;
+    color: #d0e2f2;
+}
+
+.login-form .form-group {
+    margin-bottom: 18px;
+}
+
+.login-form label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.login-btn {
+    width: 100%;
+    background: #20c997;
+    color: #003b2f;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #17b089;
+}
+
+.login-note {
+    margin-top: 15px;
+    font-size: 12px;
+    text-align: center;
+    color: #c9dceb;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+}
