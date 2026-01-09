@@ -1,4 +1,8 @@
-<?php include 'inc/header.php'; ?>
+<?php include 'inc/header.php';
+require_once('inc/db_config.php');
+require('inc/essentials.php');
+  adminLogin();
+?>
 
 <section class="complaint-management">
 

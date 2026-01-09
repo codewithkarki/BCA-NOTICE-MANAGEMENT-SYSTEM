@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +44,8 @@
         </div>
     </div>
 
-    <a href="verification.php">Verification</a>
-    <a href="login.php" class="logout-btn">Logout</a>
+    <a href="verification.php">Users</a>
+    <a href="logout.php" class="logout-btn">Logout</a>
 
 </nav>
 
