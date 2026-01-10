@@ -1,6 +1,12 @@
-<?php include 'inc/header.php'; ?>
-<?php
+<?php 
+session_start();
+include 'inc/header.php'; 
+
 require_once('admin/inc/db_config.php');
+if (!isset($_SESSION['user_id'])) {
+   header("Location: login.php");
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -18,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </script>";
         exit;
     }
+
 
     $query = "INSERT INTO feedbacks (subject, message, rating, created_at)
               VALUES (?, ?, ?, NOW())";

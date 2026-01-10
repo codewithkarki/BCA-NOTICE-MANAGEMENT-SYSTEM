@@ -1,4 +1,10 @@
-<?php include 'inc/header.php'; ?>
+<?php 
+session_start();
+if (!isset($_SESSION['user_id'])) {
+   header("Location: login.php");
+    exit();
+}
+include 'inc/header.php'; ?>
 
 <div class="contact-container">
     <h2 class="page-title">BCA Department Contacts</h2>

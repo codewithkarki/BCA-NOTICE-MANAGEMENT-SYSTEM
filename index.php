@@ -1,4 +1,11 @@
-<?php include 'inc\header.php';?>
+<?php 
+session_start();
+if (!isset($_SESSION['user_id'])) {
+   header("Location: login.php");
+    exit();
+}
+include 'inc\header.php';?>
+
 
 <!-- HERO / SYSTEM IDENTITY -->
 

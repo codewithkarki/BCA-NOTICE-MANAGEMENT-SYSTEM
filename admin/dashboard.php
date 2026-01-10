@@ -1,111 +1,77 @@
-<?php include 'inc/header.php'; 
+<?php 
 require_once('inc/db_config.php');
 require('inc/essentials.php');
-  adminLogin();
-  ?>
-<!-- ADMIN DASHBOARD -->
+adminLogin();
+
+$notices_count = mysqli_fetch_assoc(mysqli_query($con, "SELECT COUNT(*) as total FROM `notices`"))['total'];
+
+
+$polls_count = mysqli_fetch_assoc(mysqli_query($con, "SELECT COUNT(*) as total FROM `polls` WHERE `status`='Active'"))['total'];
+
+$students_count = mysqli_fetch_assoc(mysqli_query($con, "SELECT COUNT(*) as total FROM `users`"))['total'];
+
+$recent_notices = mysqli_query($con, "SELECT * FROM `notices` ORDER BY `id` DESC LIMIT 4");
+
+include 'inc/header.php'; 
+?>
+
 <section class="admin-dashboard">
 
-    <!-- Page Header -->
     <div class="dashboard-header">
         <h2>Admin Dashboard <i class="fas fa-user-shield"></i></h2>
-        <p>Welcome Admin &nbsp;<i class="fas fa-user-shield"></i> <br> Overview of system activities and statistics...</p>
+        <p>Welcome Admin! Overview of system activities and statistics...</p>
     </div>
 
-    <!-- STATS CARDS -->
     <div class="stats-grid">
         <div class="stat-card">
             <h3>Total Notices</h3>
-            <span class="stat-number">128</span>
+            <span class="stat-number"><?php echo $notices_count; ?></span>
         </div>
 
         <div class="stat-card">
-            <h3>Complaints</h3>
-            <span class="stat-number">36</span>
+            <h3>Registered Students</h3>
+            <span class="stat-number"><?php echo $students_count; ?></span>
         </div>
 
-        <div class="stat-card">
-            <h3>Feedbacks</h3>
-            <span class="stat-number">92</span>
-        </div>
 
         <div class="stat-card">
             <h3>Active Polls</h3>
-            <span class="stat-number">5</span>
+            <span class="stat-number"><?php echo $polls_count; ?></span>
         </div>
     </div>
 
-    <!-- RECENT ACTIVITY -->
     <div class="recent-activity">
-        <h3>Recent Activity</h3>
-
+        <h3>Recent Notices Posted</h3>
         <ul class="activity-list">
+            <?php while($activity = mysqli_fetch_assoc($recent_notices)): ?>
             <li>
-                <span class="activity-time">Today</span>
-                <p>New notice <strong>"BCA Exam Schedule"</strong> added.</p>
+                <span class="activity-time"><?php echo date('M d', strtotime($activity['date'])); ?></span>
+                <p>Notice <strong>"<?php echo $activity['title']; ?>"</strong> is currently <strong><?php echo $activity['status']; ?></strong>.</p>
             </li>
-
-            <li>
-                <span class="activity-time">Yesterday</span>
-                <p>Complaint submitted regarding <strong>Library Timing</strong>.</p>
-            </li>
-
-            <li>
-                <span class="activity-time">2 days ago</span>
-                <p>New poll <strong>"Internal Exam Mode"</strong> created.</p>
-            </li>
-
-            <li>
-                <span class="activity-time">3 days ago</span>
-                <p>Feedback received from <strong>BCA 4th Semester</strong>.</p>
-            </li>
+            <?php endwhile; ?>
         </ul>
     </div>
 
 </section>
-<!-- EXTRA INFORMATION SECTION (SAFE ADDITION) -->
+
 <section class="admin-extra-info">
-
-    <!-- ADMIN INFO -->
     <div class="info-card">
-        <div class="info-icon">
-            <i class="fas fa-user-shield"></i>
-        </div>
+        <div class="info-icon"><i class="fas fa-user-shield"></i></div>
         <h3>Administrator</h3>
-        <p>
-            You are logged in as the system administrator of the
-            <strong>BCA Notice Management System</strong>.
-            You have full control over notices, complaints, feedback,
-            polls, and student verification.
-        </p>
+        <p>Logged in as system admin of MMC Dang. You have full control over the platform.</p>
     </div>
 
-    <!-- COLLEGE INFO -->
     <div class="info-card">
-        <div class="info-icon">
-            <i class="fas fa-university"></i>
-        </div>
-        <h3>Mahendra Multiple Campus Dang (MMC)</h3>
-        <p>
-            The BCA program at NMS focuses on academic excellence,
-            practical learning, and modern IT skills aligned with
-            Tribhuvan University curriculum.
-        </p>
+        <div class="info-icon"><i class="fas fa-university"></i></div>
+        <h3>MMC Dang</h3>
+        <p>Mahendra Multiple Campus BCA program management portal.</p>
     </div>
 
-    <!-- SYSTEM INFO -->
     <div class="info-card">
-        <div class="info-icon">
-            <i class="fas fa-desktop"></i>
-        </div>
+        <div class="info-icon"><i class="fas fa-desktop"></i></div>
         <h3>System Overview</h3>
-        <p>
-            This platform digitalizes communication between students
-            and administration by providing structured notice delivery,
-            secure feedback, complaint handling, and future poll-based decisions.
-        </p>
+        <p>Digitalizing communication via structured notice delivery and secure polling.</p>
     </div>
-
 </section>
 
 <?php include 'inc/footer.php'; ?>

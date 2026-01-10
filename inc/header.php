@@ -29,7 +29,7 @@
         <a href="feedback.php">Feedback</a>
         <a href="polls.php">Polls</a>
         <a href="contact.php">Contact</a>
-        <a href="login.php" class="logout-btn">Logout</a>
+        <a href="logout.php" class="logout-btn">Logout</a>
     </nav>
 
     <div class="menu-icon" id="menuIcon">

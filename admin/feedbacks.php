@@ -3,7 +3,20 @@ include 'inc/header.php';
 require_once('inc/db_config.php');
 require('inc/essentials.php');
 adminLogin();
+   if (isset($_GET['delete_id'])) {
+    $id = mysqli_real_escape_string($con, $_GET['delete_id']);
+
+    $delete_query = "DELETE FROM feedbacks WHERE id = '$id'";
+
+    if (mysqli_query($con, $delete_query)) {
+        echo "<script>alert('Feedback Deleted Successfully.'); window.location.href='feedbacks.php';</script>";
+    } else {
+        echo "Error deleting feedback: " . mysqli_error($con);
+    }
+}
 ?>
+
+
 
 <section class="feedback-management">
 
@@ -53,6 +66,13 @@ adminLogin();
                                     )\">
                                     View
                                 </button>
+                                <a href='feedbacks.php?delete_id={$row['id']}' 
+                       class='btn-delete' 
+                       onclick=\"return confirm('Are you sure you want to delete this feedback?')\"
+                       style='text-decoration: none;  padding: 6px 12px;
+                        border-radius: 6px; background-color: #dc3545; color: white;  font-size: 14px; margin-left: 5px;'>
+                       Delete
+                    </a>
                             </td>
                         </tr>";
                     }
