@@ -1,41 +1,73 @@
 function handleComplaintType() {
-    const type = document.getElementById("complaintType").value;
-    const anonBox = document.getElementById("anonymousBox");
-    const anonCheck = document.getElementById("anonymous");
-    const identity = document.getElementById("identityFields");
+    const type = document.getElementById('complaintType').value;
+    const identityFields = document.getElementById('identityFields');
+    const anonymousBox = document.getElementById('anonymousBox');
+    const anonymousCheckbox = document.getElementById('anonymous');
 
-    if (type === "Harassment") {
-        anonBox.style.display = "block";
-        identity.style.display = "block";
+    if (type === 'Harassment') {
+        anonymousBox.style.display = 'block';
+
+        if (anonymousCheckbox.checked) {
+            identityFields.style.display = 'none';
+            setRequired(false);
+        } else {
+            identityFields.style.display = 'block';
+            setRequired(true);
+        }
     } else {
-        // RESET EVERYTHING
-        anonBox.style.display = "none";
-        anonCheck.checked = false;
-        identity.style.display = "block";
+        anonymousBox.style.display = 'none';
+        anonymousCheckbox.checked = false;
+        identityFields.style.display = 'block';
+        setRequired(true);
     }
 }
 
 function toggleAnonymous() {
-    const anon = document.getElementById("anonymous").checked;
-    const identity = document.getElementById("identityFields");
+    const anonymousCheckbox = document.getElementById('anonymous');
+    const identityFields = document.getElementById('identityFields');
 
-    identity.style.display = anon ? "none" : "block";
+    if (anonymousCheckbox.checked) {
+        identityFields.style.display = 'none';
+        setRequired(false);
+    } else {
+        identityFields.style.display = 'block';
+        setRequired(true);
+    }
 }
 
-function validateComplaint() {
-    const type = document.getElementById("complaintType").value;
-    const anon = document.getElementById("anonymous").checked;
-    const name = document.getElementById("name").value.trim();
-    const sem = document.getElementById("semester").value.trim();
+function setRequired(required) {
+    document.querySelector('input[name="name"]').required = required;
+    document.querySelector('input[name="semester"]').required = required;
+}
 
-    if (type !== "Harassment" && (name === "" || sem === "")) {
-        alert("Please fill your name and semester.");
+/* Optional safety validation */
+function validateComplaint() {
+    const type = document.getElementById('complaintType').value;
+    const anonymous = document.getElementById('anonymous').checked;
+    const desc = document.querySelector('textarea[name="description"]').value.trim();
+
+    if (type === '') {
+        alert('Please select complaint type');
         return false;
     }
 
-    if (type === "Harassment" && !anon && (name === "" || sem === "")) {
-        alert("Fill name & semester or choose anonymous.");
+    if (desc === '') {
+        alert('Please enter complaint description');
         return false;
+    }
+
+    if (type === 'Harassment' && anonymous) {
+        return true;
+    }
+
+    if (!anonymous) {
+        const name = document.querySelector('input[name="name"]').value.trim();
+        const semester = document.querySelector('input[name="semester"]').value.trim();
+
+        if (name === '' || semester === '') {
+            alert('Name and Semester are required');
+            return false;
+        }
     }
 
     return true;

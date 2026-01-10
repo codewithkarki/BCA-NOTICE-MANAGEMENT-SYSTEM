@@ -1,7 +1,8 @@
-<?php include 'inc/header.php';
+<?php 
+include 'inc/header.php';
 require_once('inc/db_config.php');
 require('inc/essentials.php');
-  adminLogin();
+adminLogin();
 ?>
 
 <section class="complaint-management">
@@ -27,50 +28,52 @@ require('inc/essentials.php');
                 </tr>
             </thead>
 
-            <tbody id="complaintTableBody">
-                <tr>
-                    <td>1</td>
-                    <td>Infrastructure</td>
-                    <td>Ramesh Thapa</td>
-                    <td>4th Semester</td>
-                    <td>No</td>
-                    <td>2026-01-05</td>
-                    <td>
-                        <button class="view-btn"
-                            onclick="openComplaintModal(
-                                'Infrastructure',
-                                'Ramesh Thapa',
-                                '4th Semester',
-                                'No',
-                                'The classroom projector is not working properly.',
-                                '2026-01-05'
-                            )">
-                            View
-                        </button>
-                    </td>
-                </tr>
+            <tbody>
+                <?php
+                $sql = "SELECT * FROM complaints ORDER BY created_at DESC";
+                $res = mysqli_query($con, $sql);
 
-                <tr>
-                    <td>2</td>
-                    <td>Harassment</td>
-                    <td>Anonymous</td>
-                    <td>—</td>
-                    <td>Yes</td>
-                    <td>2026-01-03</td>
-                    <td>
-                        <button class="view-btn"
-                            onclick="openComplaintModal(
-                                'Harassment',
-                                'Anonymous',
-                                '—',
-                                'Yes',
-                                'A student is being verbally harassed during practical sessions.',
-                                '2026-01-03'
-                            )">
-                            View
-                        </button>
-                    </td>
-                </tr>
+                if ($res && mysqli_num_rows($res) > 0) {
+                    while ($row = mysqli_fetch_assoc($res)) {
+
+                        // Anonymous handling
+                        if ($row['is_anonymous'] == 1) {
+                            $name = 'Anonymous';
+                            $semester = '—';
+                            $anonymous = 'Yes';
+                        } else {
+                            $name = $row['student_name'];
+                            $semester = $row['semester'];
+                            $anonymous = 'No';
+                        }
+
+                        echo "
+                        <tr>
+                            <td>{$row['id']}</td>
+                            <td>{$row['complaint_type']}</td>
+                            <td>{$name}</td>
+                            <td>{$semester}</td>
+                            <td>{$anonymous}</td>
+                            <td>".date('Y-m-d', strtotime($row['created_at']))."</td>
+                            <td>
+                                <button class='view-btn'
+                                    onclick=\"openComplaintModal(
+                                        '".htmlspecialchars($row['complaint_type'], ENT_QUOTES)."',
+                                        '".htmlspecialchars($name, ENT_QUOTES)."',
+                                        '".htmlspecialchars($semester, ENT_QUOTES)."',
+                                        '{$anonymous}',
+                                        '".htmlspecialchars($row['description'], ENT_QUOTES)."',
+                                        '".date('Y-m-d', strtotime($row['created_at']))."'
+                                    )\">
+                                    View
+                                </button>
+                            </td>
+                        </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='7' style='text-align:center;'>No complaints found</td></tr>";
+                }
+                ?>
             </tbody>
         </table>
     </div>

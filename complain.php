@@ -1,8 +1,65 @@
-<!-- Icluding Header  -->
- <?php
-include 'inc/header.php';
+<?php include 'inc/header.php'; ?>
+<?php
+require_once('admin/inc/db_config.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $complaint_type = mysqli_real_escape_string($con, $_POST['complaint_type']);
+    $description    = mysqli_real_escape_string($con, $_POST['description']);
+
+    // Handle anonymous logic
+    if (isset($_POST['anonymous']) && $complaint_type === 'Harassment') {
+        $student_name = NULL;
+        $semester = NULL;
+        $is_anonymous = 1;
+    } else {
+        if (empty($_POST['name']) || empty($_POST['semester'])) {
+            echo "<script>
+                alert('Name and Semester are required');
+                window.history.back();
+            </script>";
+            exit;
+        }
+
+        $student_name = mysqli_real_escape_string($con, $_POST['name']);
+        $semester = mysqli_real_escape_string($con, $_POST['semester']);
+        $is_anonymous = 0;
+    }
+
+    $query = "INSERT INTO complaints 
+              (complaint_type, student_name, semester, description, is_anonymous, created_at)
+              VALUES (?, ?, ?, ?, ?, NOW())";
+
+    $stmt = mysqli_prepare($con, $query);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ssssi",
+            $complaint_type,
+            $student_name,
+            $semester,
+            $description,
+            $is_anonymous
+        );
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>
+                alert('Complaint submitted successfully. It will be reviewed confidentially.');
+                window.location.href='complain.php';
+            </script>";
+        } else {
+            echo "<script>alert('Submission failed. Try again.');</script>";
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        echo "Database Error: " . mysqli_error($con);
+    }
+}
 ?>
-    <div class="page-container">
+
+<div class="page-container">
     <div class="complaint-card">
         <h2>📝 Student Complaint Form</h2>
         <p>Your concerns will be handled confidentially.</p>
@@ -22,23 +79,21 @@ include 'inc/header.php';
                 </select>
             </div>
 
-            <!-- Identity fields -->
             <div id="identityFields">
                 <div class="field-group">
                     <label>Your Name</label>
-                    <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+                    <input type="text" name="name" placeholder="Enter your full name">
                 </div>
 
                 <div class="field-group">
                     <label>Semester</label>
-                    <input type="text" name="semester" id="semester" placeholder="Eg: 4th Semester" required>
+                    <input type="text" name="semester" placeholder="Eg: 4th Semester">
                 </div>
             </div>
 
-            <!-- Anonymous option -->
-            <div class="checkbox-area" id="anonymousBox">
+            <div class="checkbox-area" id="anonymousBox" style="display:none;">
                 <label>
-                    <input type="checkbox" id="anonymous" name="anonymous" onchange="toggleAnonymous()">
+                    <input type="checkbox" name="anonymous" id="anonymous" onchange="toggleAnonymous()">
                     Submit Anonymously
                 </label>
             </div>
@@ -52,7 +107,4 @@ include 'inc/header.php';
         </form>
     </div>
 </div>
-<!-- Icluding Footer  -->
-<?php
-include 'inc/footer.php';
-?>
+<?php include 'inc/footer.php'; ?>

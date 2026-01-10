@@ -1,21 +1,14 @@
-const complaintModal = document.getElementById("complaintModal");
-
 function openComplaintModal(type, name, semester, anonymous, description, date) {
-    document.getElementById("cType").textContent = type;
-    document.getElementById("cName").textContent = name;
-    document.getElementById("cSemester").textContent = semester;
-    document.getElementById("cAnonymous").textContent = anonymous;
-    document.getElementById("cDescription").textContent = description;
-    document.getElementById("cDate").textContent = date;
+    document.getElementById('cType').innerText = type;
+    document.getElementById('cName').innerText = name;
+    document.getElementById('cSemester').innerText = semester;
+    document.getElementById('cAnonymous').innerText = anonymous;
+    document.getElementById('cDescription').innerText = description;
+    document.getElementById('cDate').innerText = date;
 
-    complaintModal.style.display = "flex";
+    document.getElementById('complaintModal').style.display = 'flex';
 }
 
 function closeComplaintModal() {
-    complaintModal.style.display = "none";
+    document.getElementById('complaintModal').style.display = 'none';
 }
-
-/* Close modal on outside click */
-window.onclick = function (e) {
-    if (e.target === complaintModal) closeComplaintModal();
-};

@@ -1,7 +1,10 @@
-<?php include 'inc/header.php';
+<?php 
+include 'inc/header.php';
 require_once('inc/db_config.php');
 require('inc/essentials.php');
-  adminLogin(); ?>
+adminLogin();
+?>
+
 <section class="feedback-management">
 
     <!-- HEADER -->
@@ -23,46 +26,40 @@ require('inc/essentials.php');
                 </tr>
             </thead>
 
-            <tbody id="feedbackTableBody">
-                <tr>
-                    <td>1</td>
-                    <td>Learning Experience</td>
-                    <td>
-                        <span class="stars">★★★★★</span>
-                    </td>
-                    <td>2026-01-06</td>
-                    <td>
-                        <button class="view-btn"
-                            onclick="openFeedbackModal(
-                                'Learning Experience',
-                                'The system is very helpful and easy to use.',
-                                5,
-                                '2026-01-06'
-                            )">
-                            View
-                        </button>
-                    </td>
-                </tr>
+            <tbody>
+                <?php
+                $query = "SELECT * FROM feedbacks ORDER BY created_at DESC";
+                $result = mysqli_query($con, $query);
 
-                <tr>
-                    <td>2</td>
-                    <td>—</td>
-                    <td>
-                        <span class="stars">★★★☆☆</span>
-                    </td>
-                    <td>2026-01-04</td>
-                    <td>
-                        <button class="view-btn"
-                            onclick="openFeedbackModal(
-                                '—',
-                                'Overall good, but UI can be improved slightly.',
-                                3,
-                                '2026-01-04'
-                            )">
-                            View
-                        </button>
-                    </td>
-                </tr>
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+                        $stars = str_repeat('★', $row['rating']) . str_repeat('☆', 5 - $row['rating']);
+                        $subject = $row['subject'] ?: '—';
+
+                        echo "
+                        <tr>
+                            <td>{$row['id']}</td>
+                            <td>{$subject}</td>
+                            <td><span class='stars'>{$stars}</span></td>
+                            <td>" . date('Y-m-d', strtotime($row['created_at'])) . "</td>
+                            <td>
+                                <button class='view-btn'
+                                    onclick=\"openFeedbackModal(
+                                        '".htmlspecialchars($subject, ENT_QUOTES)."',
+                                        '".htmlspecialchars($row['message'], ENT_QUOTES)."',
+                                        '{$stars}',
+                                        '".date('Y-m-d', strtotime($row['created_at']))."'
+                                    )\">
+                                    View
+                                </button>
+                            </td>
+                        </tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5' style='text-align:center;'>No feedback found</td></tr>";
+                }
+                ?>
             </tbody>
         </table>
     </div>
@@ -88,5 +85,20 @@ require('inc/essentials.php');
     </div>
 
 </section>
+
+<script>
+function openFeedbackModal(subject, message, rating, date) {
+    document.getElementById('fSubject').innerText = subject;
+    document.getElementById('fMessage').innerText = message;
+    document.getElementById('fRating').innerHTML = rating;
+    document.getElementById('fDate').innerText = date;
+
+    document.getElementById('feedbackModal').style.display = 'flex';
+}
+
+function closeFeedbackModal() {
+    document.getElementById('feedbackModal').style.display = 'none';
+}
+</script>
 
 <?php include 'inc/footer.php'; ?>
