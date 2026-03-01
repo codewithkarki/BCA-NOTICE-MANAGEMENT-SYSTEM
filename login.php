@@ -52,7 +52,7 @@ if (isset($_POST['login_btn'])) {
     <div class="auth-container">
         <div class="auth-card">
             <h2>Welcome Back</h2>
-            <p>Login to continue to BCANMS</p>
+            <p>Login to continue to BCA NMS</p>
 
             <form action="login.php" method="POST" onsubmit="return validateLogin()">
                 <div class="field-group">

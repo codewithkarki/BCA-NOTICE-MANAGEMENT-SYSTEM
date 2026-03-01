@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css\index.css">
     <link rel="stylesheet" href="css\notices.css">
     <link rel="stylesheet" href="css\polls.css">
+    <link rel="stylesheet" href="css\auth.css">
+
 
 
     <!-- Icons -->
@@ -19,8 +21,10 @@
 <body>
     <header class="main-header">
     <div class="logo-area">
-        <img src="images\logo\logo.png" alt="NMS Logo">
+        <a href="index.php" class="logo-area">
+        <img src="images/logo/logo.png" alt="NMS Logo">
         <span>BCA NMS</span>
+    </a>
     </div>
 
     <nav class="nav-links" id="navLinks">
@@ -29,7 +33,7 @@
         <a href="feedback.php">Feedback</a>
         <a href="polls.php">Polls</a>
         <a href="contact.php">Contact</a>
-        <a href="logout.php" class="logout-btn">Logout</a>
+        <a href="logout.php" class="logout-btn"> <i class="fas fa-sign-out-alt"></i>Logout</a>
     </nav>
 
     <div class="menu-icon" id="menuIcon">

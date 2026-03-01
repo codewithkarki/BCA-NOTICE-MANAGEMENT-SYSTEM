@@ -45,7 +45,7 @@
     </div>
 
     <a href="verification.php">Users</a>
-    <a href="logout.php" class="logout-btn">Logout</a>
+    <a href="logout.php" class="logout-btn"> <i class="fas fa-sign-out-alt"></i>Logout</a>
 
 </nav>
 

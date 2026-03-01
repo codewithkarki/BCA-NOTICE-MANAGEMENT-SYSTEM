@@ -26,7 +26,7 @@ if (isset($_POST['register_btn'])) {
         mysqli_stmt_bind_param($stmt, "sssssss", $full_name, $email, $phone, $address, $semester, $reg_no, $hashed_pass);
 
         if (mysqli_stmt_execute($stmt)) {
-            echo "<script>alert('Registration Successful! <br> Your account will be activated after admin verification'); window.location.href='login.php';</script>";
+            echo "<script>alert('Registration Successful! || Your account will be activated after admin verification'); window.location.href='login.php';</script>";
         } else {
             echo "<script>alert('Registration Failed. Try again.');</script>";
         }

@@ -1,107 +1,234 @@
+/* =====================================
+   NOTICE PAGE – FINAL PROFESSIONAL UI
+   ===================================== */
+
 .notice-page {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 24px;
 }
 
+/* Page Title */
 .page-title {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    font-size: 32px;
+    font-weight: 700;
     color: #1f2b55;
+    letter-spacing: 0.4px;
 }
 
+/* Notice List */
 .notice-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
+
+/* =====================================
+   NOTICE CARD
+   ===================================== */
 
 .notice-card {
-    background: #fff;
-    padding: 20px 24px;
-    border-radius: 12px;
+    background: #ffffff;
+    padding: 26px 30px;
+    border-radius: 16px;
     border: 1px solid #e6e9f2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    transition: all 0.35s ease;
 }
 
+/* Left Accent Line */
+.notice-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(#1f2b55, #0b5ed7);
+}
+
+/* Hover Effect */
 .notice-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
     border-color: #0b5ed7;
 }
 
-.notice-info {
-    max-width: 75%;
-}
+/* =====================================
+   CONTENT
+   ===================================== */
 
 .notice-title {
-    margin-bottom: 6px;
+    font-size: 22px;
+    font-weight: 700;
     color: #1f2b55;
+    margin-bottom: 10px;
+    line-height: 1.35;
 }
 
+/* Meta Info */
 .notice-meta {
     font-size: 14px;
-    color: #666;
+    color: #6b7280;
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 14px;
+    white-space: nowrap;
+}
+
+.notice-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Notice Preview (3–4 lines) */
+.notice-preview {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 18px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =====================================
+   ACTION BUTTON
+   ===================================== */
+
+.notice-action {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .view-btn {
-    padding: 8px 16px;
-    border-radius: 6px;
+    padding: 6px 16px;
+    border-radius: 18px;
     border: none;
-    background: #0b5ed7;
-    color: #fff;
+    background: #e5e7eb;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.25s ease;
 }
 
 .view-btn:hover {
-    background: #094bb5;
+    background: #0b5ed7;
+    color: #ffffff;
 }
 
 .view-btn.disabled {
-    background: #ccc;
+    background: #d1d5db;
+    color: #6b7280;
     cursor: not-allowed;
 }
 
-/* MODAL */
+/* =====================================
+   MODAL (IMAGE VIEW)
+   ===================================== */
+
 .notice-modal {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.75);
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 1000;
+}
+
+.notice-modal.active {
+    display: flex;
 }
 
 .notice-modal img {
     max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
+    max-height: 85%;
+    border-radius: 14px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    animation: zoomIn 0.35s ease;
 }
 
 .close-modal {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 32px;
-    color: #fff;
+    top: 28px;
+    right: 36px;
+    font-size: 36px;
+    color: #ffffff;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-    .notice-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+.close-modal:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* =====================================
+   ANIMATION
+   ===================================== */
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+/* =====================================
+   RESPONSIVE (MOBILE & TABLET)
+   ===================================== */
+
+@media (max-width: 768px) {
+
+    .page-title {
+        font-size: 26px;
     }
 
-    .notice-info {
-        max-width: 100%;
+    .notice-card {
+        padding: 22px 22px;
+    }
+
+    .notice-title {
+        font-size: 20px;
+    }
+
+    .notice-meta {
+        flex-wrap: wrap;
+        white-space: normal;
+        gap: 10px;
+    }
+
+    .notice-preview {
+        -webkit-line-clamp: 3;
+    }
+
+    .view-btn {
+        margin-top: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .notice-page {
+        padding: 0 16px;
+    }
+
+    .notice-card {
+        padding: 20px;
+    }
+
+    .notice-title {
+        font-size: 18px;
+    }
+
+    .notice-preview {
+        font-size: 14px;
     }
 }

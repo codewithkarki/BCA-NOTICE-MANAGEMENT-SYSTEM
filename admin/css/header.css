@@ -83,15 +83,32 @@
 }
 
 .logout-btn {
-    background: var(--accent);
-    padding: 6px 14px;
-    border-radius: 3px;
-    color: #003d36 !important;
-    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: #ffffff !important;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logout-btn i {
+    font-size: 13px;
 }
 
 .logout-btn:hover {
-    background: #17a589;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(231, 76, 60, 0.3);
+    background: linear-gradient(135deg, #d63031, #b02a1f);
+}
+
+.logout-btn:active {
+    transform: scale(0.97);
 }
 
 /* Mobile Menu Icon */

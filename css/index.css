@@ -16,7 +16,7 @@ body {
 .hero {
     background:
         linear-gradient(rgba(31,43,85,0.6), rgba(11,94,215,0.6)),
-        url("https://scontent.fkep4-1.fna.fbcdn.net/v/t39.30808-6/477779327_122195776664156046_317033542286869422_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeGC-1X8SQgruQ56LQJ6jTfCYPJXqfKqKS9g8lep8qopL2Z-iq9JBGRD_TgzkJmi4gRsY4mqT-q7gUsPDEvuzc4E&_nc_ohc=XRoieSOPFxEQ7kNvwGYZqwZ&_nc_oc=AdkhLWyK0M-waeSwfKf48jphf-dvEvhK7N8lDlA9WsX09DitIIkiyiyqQrUcE8WUEHo00HVmRgl_m_OPblMKJ6UA&_nc_zt=23&_nc_ht=scontent.fkep4-1.fna&_nc_gid=KGzrpmZrcYtzAHitkFOVUA&oh=00_Afpr9WU3Za9WMbApRKZ_0OqvOeVYbyr10zbxAAUCeYKCcw&oe=696282D9")
+        url("../images/events/bg.png")
         no-repeat center/cover;
     color: #fff;
     padding: 100px 20px;
