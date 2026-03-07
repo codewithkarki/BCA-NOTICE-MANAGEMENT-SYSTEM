@@ -66,3 +66,83 @@
     max-width: 420px;
     border-radius: 12px;
 }
+
+
+/* Small Laptops */
+@media (max-width: 1200px) {
+    .poll-view {
+        padding: 35px 18px;
+    }
+
+    .poll-table th,
+    .poll-table td {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .view-btn {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+
+    .modal-content {
+        max-width: 400px;
+        padding: 22px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+    .poll-view {
+        padding: 30px 15px;
+    }
+
+    .poll-table-wrapper {
+        padding: 15px;
+    }
+
+    .poll-table th,
+    .poll-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .view-btn {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+    .modal-content {
+        max-width: 380px;
+        padding: 20px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .poll-view {
+        padding: 25px 12px;
+    }
+
+    .poll-table {
+        min-width: 700px; /* enables smooth horizontal scroll */
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .poll-table th,
+    .poll-table td {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .view-btn {
+        width: 100%;
+        padding: 6px 0;
+    }
+}

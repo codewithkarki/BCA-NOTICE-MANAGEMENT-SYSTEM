@@ -81,3 +81,52 @@
     margin-bottom: 15px;
     text-align: center;
 }
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+
+    .page-container {
+        padding: 50px 18px;
+    }
+
+    .feedback-card {
+        padding: 30px 25px;
+    }
+
+    .feedback-card h2 {
+        font-size: 22px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .page-container {
+        padding: 40px 14px;
+    }
+
+    .feedback-card {
+        padding: 25px 18px;
+        border-radius: 12px;
+    }
+
+    .feedback-card h2 {
+        font-size: 20px;
+    }
+
+    .feedback-card input,
+    .feedback-card textarea,
+    .feedback-card select {
+        padding: 11px;
+        font-size: 13px;
+    }
+
+    .feedback-card button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+}

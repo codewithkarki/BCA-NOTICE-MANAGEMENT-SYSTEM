@@ -163,3 +163,88 @@
         min-width: auto;
     }
 }
+
+/* Small Laptops */
+@media (max-width: 1200px) {
+
+    .admin-dashboard {
+        padding: 35px 18px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 24px;
+    }
+
+    .stats-grid {
+        gap: 18px;
+    }
+
+    .stat-card {
+        padding: 22px 18px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .recent-activity {
+        padding: 22px;
+    }
+
+}
+
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .admin-dashboard {
+        padding: 30px 16px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 23px;
+    }
+
+    .dashboard-header p {
+        font-size: 13px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+    }
+
+    .stat-card {
+        padding: 20px 16px;
+    }
+
+    .stat-card h3 {
+        font-size: 14px;
+    }
+
+    .stat-number {
+        font-size: 26px;
+    }
+
+    .recent-activity {
+        padding: 20px;
+    }
+
+    .recent-activity h3 {
+        font-size: 18px;
+    }
+
+    .activity-list p {
+        font-size: 13px;
+    }
+
+    .admin-extra-info {
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .info-card {
+        padding: 26px;
+    }
+
+}

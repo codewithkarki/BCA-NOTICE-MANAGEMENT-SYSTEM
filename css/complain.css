@@ -91,9 +91,40 @@ button:hover {
     box-shadow: 0 10px 25px rgba(45,92,255,0.35);
 }
 
-/* Responsive */
-@media (max-width: 480px) {
+/* Tablet */
+@media (max-width: 768px) {
     .complaint-card {
-        padding: 30px 22px;
+        padding: 30px;
+    }
+
+    .complaint-card h2 {
+        font-size: 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .page-container {
+        padding: 40px 12px;
+    }
+
+    .complaint-card {
+        padding: 24px 18px;
+    }
+
+    .complaint-card h2 {
+        font-size: 22px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 15px;
     }
 }

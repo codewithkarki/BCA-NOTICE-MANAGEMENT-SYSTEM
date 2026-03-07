@@ -91,32 +91,6 @@
 }
 
 .staff-role {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 600;
-    color: #2d5cff;
-    background: rgba(45, 92, 255, 0.08);
-    padding: 5px 12px;
-    border-radius: 30px;
-    margin-bottom: 10px;
-}
-
-.staff-info h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1e293b;
-    margin-bottom: 8px;
-}
-
-.staff-info p {
-    font-size: 14px;
-    color: #64748b;
-    margin: 4px 0;
-}
-
-/* Icons Styles  */
-/* ROLE BADGE WITH ICON */
-.staff-role {
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -133,39 +107,84 @@
 .staff-role i {
     font-size: 11px;
 }
+
+.staff-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.staff-info p {
+    font-size: 14px;
+    color: #64748b;
+    margin: 4px 0;
+}
+
 /* ===================================== */
 /* RESPONSIVE */
 /* ===================================== */
-@media (max-width: 992px) {
-    .page-title {
-        font-size: 30px;
-    }
-}
 
+/* Tablet */
 @media (max-width: 768px) {
+
     .contact-container {
         padding: 60px 18px;
     }
 
-    .page-title {
-        font-size: 26px;
+    .department-header h1 {
+        font-size: 20px;
     }
 
-    .page-subtitle {
-        font-size: 14px;
+    .department-header h2 {
+        font-size: 16px;
+    }
+
+    .page-title {
+        font-size: 15px;
     }
 
     .staff-card img {
         height: 220px;
     }
+
+    .staff-grid {
+        gap: 22px;
+    }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
+
     .contact-container {
         padding: 50px 15px;
     }
 
+    .department-header h1 {
+        font-size: 18px;
+    }
+
+    .department-header h2 {
+        font-size: 15px;
+    }
+
+    .page-title {
+        font-size: 14px;
+    }
+
+    .header-line {
+        width: 120px;
+    }
+
     .staff-card img {
         height: 200px;
+    }
+
+    .staff-info {
+        padding: 18px 18px 20px;
+    }
+
+    .staff-grid {
+        gap: 18px;
     }
 }

@@ -84,3 +84,45 @@
         padding-left: 0;
     }
 }
+
+
+/* Small Laptops */
+@media (max-width: 1200px) {
+
+    .footer-container {
+        padding: 45px 40px;
+        gap: 30px;
+    }
+
+    .footer-logo span {
+        font-size: 19px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+    }
+
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+
+    .footer-container {
+        padding: 40px 30px;
+        gap: 25px;
+    }
+
+    .footer-links h4,
+    .footer-right h4 {
+        font-size: 15px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+
+    .footer-right p {
+        font-size: 13px;
+    }
+
+}

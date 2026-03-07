@@ -235,3 +235,46 @@ tbody tr:hover {
         padding: 4px 6px;
     }
 }
+
+/* Small Laptops */
+@media (max-width: 1200px) {
+    .verification-wrapper {
+        padding: 25px;
+    }
+
+    th, td {
+        padding: 13px;
+        font-size: 13px;
+    }
+
+    .modal-content {
+        max-width: 480px;
+    }
+
+    .btn {
+        font-size: 12px;
+        padding: 6px 9px;
+    }
+}
+
+/* Medium Tablets */
+@media (max-width: 992px) {
+    .verification-wrapper {
+        padding: 18px;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 12px;
+    }
+
+    .btn {
+        font-size: 11px;
+        padding: 5px 8px;
+    }
+
+    .modal-content {
+        max-width: 450px;
+        padding: 22px;
+    }
+}
