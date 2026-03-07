@@ -159,10 +159,28 @@ button:active {
     color: #1e293b;
 }
 
+.field-group select{
+width:100%;
+padding:14px 16px;
+border-radius:10px;
+border:1px solid #e2e8f0;
+font-size:15px;
+background:#f9fafb;
+transition:all .25s ease;
+}
+
+.field-group select:focus{
+border-color:#2d5cff;
+background:#fff;
+box-shadow:0 0 0 4px rgba(45,92,255,.1);
+outline:none;
+}
+
 /* ===== POPUP BUTTON ===== */
 .popup-box button {
     margin-top: 18px;
 }
+
 
 /* ===== ANIMATION ===== */
 @keyframes fadeInUp {

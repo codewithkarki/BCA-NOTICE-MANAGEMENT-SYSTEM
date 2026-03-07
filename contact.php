@@ -21,69 +21,69 @@ include 'inc/header.php'; ?>
 
         <!-- BCA Coordinator -->
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="BCA Coordinator">
+            <img src="images/person/sudarshan rijal.jpg" alt="BCA Coordinator">
             <div class="staff-info">
                 <span class="staff-role">
                     <i class="fas fa-chalkboard-teacher"></i>
                     BCA Program Coordinator
                 </span>
-                <h3>Mr. Rajesh Sharma</h3>
-                <p>📞 +977-9841XXXXXX</p>
+                <h3>Mr Sudarshan Rijal</h3>
+                <p>📞 +977 9857830105</p>
             </div>
         </div>
 
         <!-- Campus Chief -->
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Campus Chief">
+            <img src="images/person/campus chief.jpg" alt="Campus Chief">
             <div class="staff-info">
                 <span class="staff-role"> <i class="fas fa-user-tie"></i> Campus Chief</span>
-                <h3>Dr. Sunita Karki</h3>
+                <h3>Dr. Narayan Panthi</h3>
                 <p>📞 +977-9850XXXXXX</p>
             </div>
         </div>
 
         <!-- Lecturers -->
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="images/person/malati dashuti.jpg" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"> <i class="fas fa-book-open"></i>BCA Lecturer</span>
-                <h3>Mr. Anil Thapa</h3>
+                <h3>Er Malati Dashuti</h3>
                 <p>📞 +977-9812XXXXXX</p>
             </div>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="images/person/amrit sharma.jpg" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
-                <h3>Ms. Nisha Shrestha</h3>
+                <h3>Mr Amrit Sharma</h3>
                 <p>📞 +977-9803XXXXXX</p>
             </div>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="images/person/krishna dev.jpg" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
-                <h3>Mr. Bikash Adhikari</h3>
+                <h3>Mr Krishna Dev Thapa</h3>
                 <p>📞 +977-9866XXXXXX</p>
             </div>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="images/person/dinesh bhattarai.jpg" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
-                <h3>Ms. Pooja Koirala</h3>
-                <p>📞 +977-9821XXXXXX</p>
+                <h3>Mr Dinesh Bhattarai</h3>
+                <p>📞 +977 9857830626</p>
             </div>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="images/person/shishir paudel.jpg" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"> <i class="fas fa-book-open"></i>BCA Lecturer</span>
-                <h3>Mr. Suman Gautam</h3>
+                <h3>Mr Shishir Paudel</h3>
                 <p>📞 +977-9849XXXXXX</p>
             </div>
         </div>

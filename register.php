@@ -1,4 +1,6 @@
-<?php include 'inc/header.php'; ?>
+<head>
+    <link rel="stylesheet" href="css\auth.css">
+</head>
 <?php
 
 require_once('admin/inc/db_config.php');
@@ -46,42 +48,96 @@ if (isset($_POST['register_btn'])) {
 
             <div class="field-group">
                 <label>Full Name</label>
-                <input type="text" name="full_name" id="name" placeholder="Enter full name" required>
+                <input
+                    type="text"
+                    name="full_name"
+                    id="name"
+                    placeholder="Enter full name"
+                    maxlength="50"
+                    pattern="^[A-Za-z ]+$"
+                    title="Name should contain letters only"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter email" required>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Phone Number</label>
-                <input type="tel" id="phone" name="phone_number" placeholder="98XXXXXXXX" required>
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone_number"
+                    placeholder="98XXXXXXXX"
+                    maxlength="10"
+                    pattern="^9[78][0-9]{8}$"
+                    title="Enter valid Nepali phone number"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Address</label>
-                <input type="text" id="address" name="address" placeholder="Enter address" required>
+                <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    placeholder="Enter address"
+                    maxlength="120"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Semester</label>
-                <input type="text" id="semester" name="semester" placeholder="Eg: 4th Semester" required>
+                <select id="semester" name="semester" required>
+                    <option value="">Select Semester</option>
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
+                    <option>5th Semester</option>
+                    <option>6th Semester</option>
+                    <option>7th Semester</option>
+                    <option>8th Semester</option>
+                </select>
             </div>
 
             <div class="field-group">
                 <label>Registration Number</label>
-                <input type="number" id="regno" name="registration_number" placeholder="TU Reg No" required>
+                <input
+                    type="text"
+                    id="regno"
+                    name="registration_number"
+                    placeholder="TU Registration Number"
+                    maxlength="12"
+                    pattern="^[0-9]+$"
+                    title="Registration number must contain digits only"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Password</label>
-                <input type="password" id="password" name="password" placeholder="Create password" required>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Create password"
+                    required>
             </div>
 
             <div class="field-group">
                 <label>Confirm Password</label>
-                <input type="password" id="confirmPassword" placeholder="Re-enter password" required>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Re-enter password"
+                    required>
             </div>
 
             <div class="password-hint">
@@ -95,9 +151,11 @@ if (isset($_POST['register_btn'])) {
             </div>
 
             <button type="submit" name="register_btn">Register</button>
+
         </form>
     </div>
 </div>
 
-
-<?php include 'inc/footer.php'; ?>
+<head>
+    <script src="script/auth.js"></script>
+</head>
