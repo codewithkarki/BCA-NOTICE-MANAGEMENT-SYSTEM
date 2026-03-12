@@ -89,7 +89,7 @@ include 'inc/header.php'; ?>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
                 <h3>Ms. Ritu Pandey</h3>
@@ -98,7 +98,7 @@ include 'inc/header.php'; ?>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
                 <h3>Mr. Prakash Bhandari</h3>
@@ -107,7 +107,7 @@ include 'inc/header.php'; ?>
         </div>
 
         <div class="staff-card">
-            <img src="images/person/demo1.jpg" alt="Lecturer">
+            <img src="" alt="Lecturer">
             <div class="staff-info">
                 <span class="staff-role"><i class="fas fa-book-open"></i>BCA Lecturer</span>
                 <h3>Ms. Alisha Gurung</h3>

@@ -43,7 +43,7 @@ $result = mysqli_query($con, $query);
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th>S.N.</th>
                     <th>Full Name</th>
                     <th>Email</th>
                     <th>Semester</th>
@@ -57,9 +57,9 @@ $result = mysqli_query($con, $query);
             </thead>
 
             <tbody id="userTable">
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <?php $sn = 1; while ($row = mysqli_fetch_assoc($result)): ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $sn++; ?></td>
                         <td><?php echo $row['full_name']; ?></td>
                         <td><?php echo $row['email']; ?></td>
                         <td><?php echo $row['semester']; ?></td>
